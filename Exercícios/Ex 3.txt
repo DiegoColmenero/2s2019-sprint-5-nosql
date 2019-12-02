@@ -1,0 +1,9 @@
+1 - Ordene pela data de inclusão.
+2 - Ordene pelas descrições.
+3 - Ordene pela quantidade de caracteres das descrições.
+4 - Procure somente registros aonde o dia da data de inclusão seja igual a 01.
+
+
+1 = db.tasks.find().sort({dataInclusao: 1}).pretty()
+2 = db.tasks.find().sort({descricao: 1}).pretty()
+
