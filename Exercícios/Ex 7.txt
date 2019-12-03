@@ -1,0 +1,37 @@
+Você receberá um arquivo com o formato csv contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
+1.	Selecione todos os registros.
+2.	Selecione apenas o primeiro registro.
+3.	Selecione todos os registros em que o nome seja igual a ‘Shrek’ ou a quantidade de gatos seja igual a 2.
+4.	Selecione todos os registros em que o local de nascimento seja igual a Roma e necessariamente que a quantidade de cachorros seja igual a 3.
+5.	Selecione todos os registros em que a quantidade de gatos seja igual a 3 ou a quantidade de cachorros seja igual a 6.
+6.	Selecione todos os registros em que o nome comece com C.
+7.	Selecione todos os registros em que o nome comece com H.
+8.	Selecione todos os registros em que o nome termine com a.
+9.	Selecione todos os registros em que o nome contenha s.
+10.	Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’.
+11.	Insira 3 novos super-heróis.
+12.	Delete 1 super-herói em que o nome seja igual a Thor.
+13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
+14.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.
+
+
+Resoluções
+
+1) db.herois.find().pretty()
+2) db.herois.find().limit(1).pretty()
+3) db.herois.find({$or:[{"Nome" : "Shrek"},{"Qtd Gatos": 2}]}).pretty()
+4) db.herois.find({"Local" : "Roma","Qtd Cachorros": 3}).pretty()
+5) db.herois.find({$or:[{"Qnt Gatos" : 3},{"Qtd Cachorros": 6}]}).pretty()
+6) db.herois.find({"Nome" : /^C/i}).pretty()	
+7) db.herois.find({"Nome" : /^H/i}).pretty()
+8) db.herois.find({"Nome" : /A$/i}).pretty()
+9) db.herois.find({"Nome" : /S/i}).pretty()
+10) db.herois.find({"Nome" : {$in: [/E/i,/O/i]}}).pretty()
+11) db.herois.insertMany([
+   { "Nome": "SuperShock", "Local": "Minas Gerais" },
+   { "Nome": "Gamora", "Local": "Acre"},
+   { "Nome": "Groot", "Local": "Amazonas"},
+])
+12) db.herois.remove({"Nome": "Thor"})
+13) Thor foi removido :(
+14) mongoexport --collection=heroes --db=reporting --out=herois.json

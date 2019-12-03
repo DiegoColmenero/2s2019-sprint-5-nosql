@@ -1,0 +1,27 @@
+1.	Atualize os registros criados no exercício anterior, com os filtros abaixo (não se esqueça de buscar pelo _id):
+Titulo = Titulo Uava
+Descrição = Java Best
+Concluída = verdadeiro
+
+Titulo = Titulo OSharp
+Descrição = CShark
+Concluída = falso
+
+Titulo = Titulo Pirebase
+Descrição = Fireb4se
+
+Titulo = Titulo YMicrosoft
+Descrição = MicroSOFT
+
+Titulo = Titulo Roracle
+Descrição = Oracle Inc.
+Data de Inclusão = data de hoje
+
+1)
+a - db.tasks.update({_id: ObjectId("5de642166b4b84b3f0059e05")},{"titulo" : "Titulo Uava", "descricao" : "Java Best","concluida": "true"})
+b - db.tasks.update({_id: ObjectId("5de642166b4b84b3f0059e06")},{"titulo" : "Titulo OSharp", "descricao" : "CShark","concluida": "false"})
+c - db.tasks.update({_id: ObjectId("5de642166b4b84b3f0059e07")},{"titulo" : "Titulo Firebase", "descricao" : "Fireb4se"})
+d - db.tasks.update({_id: ObjectId("5de642166b4b84b3f0059e08")},{"titulo" : "Titulo YMicrosoft", "descricao" : "MicroSOFT"})
+E - db.tasks.update({_id: ObjectId("5de642166b4b84b3f0059e09")},{"titulo" : "Titulo Roracle", "descricao" : "Oracle Inc.", "dataInclusao": "03/12/2019"})
+
+
